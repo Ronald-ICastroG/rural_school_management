@@ -8,5 +8,5 @@ public interface SchoolRepository {
 
     List<SchoolDto> getAll();
     SchoolDto getById(long id);
-    SchoolDto save(String name);
+    SchoolDto save(SchoolDto schoolDto);
 }
