@@ -19,18 +19,18 @@ public class SchoolEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "esc_id")
-    private long EscId;
+    private long escId;
     @Column(name = "esc_name", nullable = false,length=150)
-    private String EscName;
+    private String escName;
     @Column(name = "esc_description", nullable = false,length=150)
-    private String EscDescription;
+    private String escDescription;
     @Column(name = "esc_address", nullable = false,length=200)
-    private String EscAddress;
+    private String escAddress;
     @Column(name = "esc_foundation")
-    private LocalDate EscFoundationDate;
+    private LocalDate escFoundationDate;
     @Column(name = "esc_ranking")
-    private int EscRanking;
+    private int escRanking;
     @Column(nullable = false,length=1)
-    private String EscEstate;
+    private String escState;
 
 }
