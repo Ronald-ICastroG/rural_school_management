@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="school")
+@Table(name="school_list")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class SchoolEntity {
     private LocalDate escFoundationDate;
     @Column(name = "esc_ranking")
     private int escRanking;
-    @Column(nullable = false,length=1)
+    @Column(name="esc_isactive",nullable = false,length=1)
     private String escState;
 
 }
