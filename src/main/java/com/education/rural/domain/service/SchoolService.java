@@ -31,4 +31,12 @@ public class SchoolService implements ISchoolService{
     public SchoolDto addSchool(SchoolDto schoolDto) {
         return this.schoolRepository.save(schoolDto);
     }
+
+    public SchoolDto updateSchool(long schoolId,SchoolDto schoolDto) {
+        if(schoolRepository.getById(schoolId)!=null){
+            return this.schoolRepository.save(schoolDto);
+        }
+
+        throw new RuntimeException();
+    }
 }
