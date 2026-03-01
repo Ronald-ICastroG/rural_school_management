@@ -40,7 +40,7 @@ public class SchoolEntityRepository implements SchoolRepository {
             throw new RuntimeException("el título " + schoolDto + "ya existe");
         }
         SchoolEntity schoolEntity = this.schoolMapper.dtoToEntity(schoolDto);
-        return this.schoolMapper.schoolToDto(schoolEntity);
+        return this.schoolMapper.schoolToDto(this.crudSchoolRepository.save(schoolEntity));
     }
 
 }
