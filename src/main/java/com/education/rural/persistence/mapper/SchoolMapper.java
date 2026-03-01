@@ -14,6 +14,7 @@ public interface SchoolMapper {
 
 
     SchoolDto schoolToDto(SchoolEntity entity);
+
     List<SchoolDto> schoolToDto(Iterable<SchoolEntity> entity);
 
     @InheritInverseConfiguration
