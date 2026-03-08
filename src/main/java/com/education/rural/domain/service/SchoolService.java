@@ -1,6 +1,7 @@
 package com.education.rural.domain.service;
 
 import com.education.rural.domain.dto.SchoolDto;
+import com.education.rural.domain.dto.UpdateSchoolDto;
 import com.education.rural.domain.repository.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,11 +33,11 @@ public class SchoolService implements ISchoolService{
         return this.schoolRepository.save(schoolDto);
     }
 
-    public SchoolDto updateSchool(long schoolId,SchoolDto schoolDto) {
-        if(schoolRepository.getById(schoolId)!=null){
-            return this.schoolRepository.save(schoolDto);
-        }
+    public SchoolDto updateSchool(long id, UpdateSchoolDto updateSchoolDto) {
+            return this.schoolRepository.update(id,updateSchoolDto);
+    }
 
-        throw new RuntimeException();
+    public void deleteSchool(long schoolId) {
+        this.schoolRepository.deleteById(schoolId);
     }
 }
