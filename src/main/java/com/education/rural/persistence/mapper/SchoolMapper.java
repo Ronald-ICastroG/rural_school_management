@@ -6,7 +6,6 @@ import com.education.rural.persistence.entity.SchoolEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 
-
 import java.util.List;
 
 @Mapper(componentModel = "spring")
@@ -20,5 +19,4 @@ public interface SchoolMapper {
     @InheritInverseConfiguration
     SchoolEntity dtoToEntity(SchoolDto dto);
 }
-
 

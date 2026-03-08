@@ -3,7 +3,6 @@ package com.education.rural.web.controller;
 import com.education.rural.domain.dto.SchoolDto;
 import com.education.rural.domain.service.ISchoolService;
 import jakarta.validation.Valid;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

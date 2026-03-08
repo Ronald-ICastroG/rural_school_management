@@ -4,7 +4,6 @@ import com.education.rural.domain.dto.SchoolDto;
 import com.education.rural.domain.repository.SchoolRepository;
 import com.education.rural.persistence.entity.SchoolEntity;
 import com.education.rural.persistence.mapper.SchoolMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
