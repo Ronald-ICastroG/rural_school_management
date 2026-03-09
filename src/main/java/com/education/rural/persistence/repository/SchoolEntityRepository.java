@@ -25,7 +25,6 @@ public class SchoolEntityRepository implements SchoolRepository {
 
     @Override
     public List<SchoolDto> getAll() {
-        this.jpaSchoolRepository.findAll();
         return this.schoolMapper.schoolToDto(this.jpaSchoolRepository.findAll());
     }
 

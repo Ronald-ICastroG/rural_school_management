@@ -26,10 +26,10 @@ public class CampusEntity {
     @Column(name = "Cam_Location",length = 150)
     private String campusLocation;
     @Column(name = "Cam_Active")
-    private Boolean active=true;
+    private Boolean campusActive=true;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Cam_SchId",nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "Cam_SchId",nullable = false)
     private SchoolEntity school;
     @OneToMany(mappedBy = "campus")
     private List<GradeEntity>grades;
