@@ -26,7 +26,7 @@ public class SchoolController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id:[0-9]+}")
     public ResponseEntity<SchoolDto> findSchoolById(@PathVariable long id) {
         SchoolDto schoolDto = this.schoolService.getSchoolById(id);
         return (schoolDto == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(schoolDto));

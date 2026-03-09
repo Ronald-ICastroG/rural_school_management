@@ -25,7 +25,6 @@ public class SchoolEntityRepository implements SchoolRepository {
 
     @Override
     public List<SchoolDto> getAll() {
-        this.jpaSchoolRepository.findAll();
         return this.schoolMapper.schoolToDto(this.jpaSchoolRepository.findAll());
     }
 
@@ -47,7 +46,7 @@ public class SchoolEntityRepository implements SchoolRepository {
     public SchoolDto update(long id, UpdateSchoolDto updateSchoolDto) {
         SchoolEntity schoolEntity=this.jpaSchoolRepository.findById(id).orElse(null);
         if(schoolEntity==null) {
-            throw new RuntimeException("School not founded");
+            throw new RuntimeException("School not found");
         }
 
         this.schoolMapper.updateEntityFromDto(updateSchoolDto,schoolEntity);
