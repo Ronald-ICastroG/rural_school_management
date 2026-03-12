@@ -1,15 +1,13 @@
 package com.education.rural.persistence.mapper;
 
 import com.education.rural.domain.dto.CampusDto;
+import com.education.rural.domain.dto.UpdateCampusDto;
+import com.education.rural.domain.dto.UpdateSchoolDto;
 import com.education.rural.persistence.entity.CampusEntity;
 import com.education.rural.persistence.entity.SchoolEntity;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Mapper(componentModel = "spring")
 public interface CampusMapper {
@@ -33,5 +31,12 @@ public interface CampusMapper {
         school.setEscId(schoolId); // Asegúrate que el setter en SchoolEntity sea público
         return school;
     }
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "school", ignore = true) // NO toques la escuela en un PATCH de nombre/ubicación
+    @Mapping(target = "grades", ignore = true)
+    @Mapping(target = "campusId", ignore = true)
+    void UpdateCampusFromDto(UpdateCampusDto dto, @MappingTarget CampusEntity entity);
+
 
 }

@@ -1,6 +1,7 @@
 package com.education.rural.web.controller;
 
 import com.education.rural.domain.dto.CampusDto;
+import com.education.rural.domain.dto.UpdateCampusDto;
 import com.education.rural.domain.service.ICampusService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +40,8 @@ public class CampusController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<CampusDto> updateCampus(@PathVariable Integer id,@RequestBody CampusDto campusDto){
-        return new ResponseEntity<>(this.campusService.updateCampus(id,campusDto),HttpStatus.ACCEPTED);
+    public ResponseEntity<CampusDto> patchCampus(@PathVariable Integer id,@RequestBody UpdateCampusDto updateCampusDto){
+        return new ResponseEntity<>(this.campusService.patchCampus(id,updateCampusDto),HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/{id}")

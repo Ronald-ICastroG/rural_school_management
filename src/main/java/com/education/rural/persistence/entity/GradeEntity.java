@@ -26,6 +26,6 @@ public class GradeEntity {
     private Boolean gradeActive=true;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Grd_CamId",nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "Grd_CamId",nullable = false)
     private CampusEntity campus;
 }

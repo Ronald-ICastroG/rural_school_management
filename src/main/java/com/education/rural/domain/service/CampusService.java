@@ -1,7 +1,9 @@
 package com.education.rural.domain.service;
 
 import com.education.rural.domain.dto.CampusDto;
+import com.education.rural.domain.dto.UpdateCampusDto;
 import com.education.rural.domain.repository.CampusRepository;
+import org.hibernate.sql.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,8 +40,8 @@ public class CampusService implements ICampusService {
     }
 
     @Override
-    public CampusDto updateCampus(int id, CampusDto campusDto) {
-        return this.campusRepository.save(campusDto);
+    public CampusDto patchCampus(int id, UpdateCampusDto updateCampusDto) {
+        return this.campusRepository.patch(id,updateCampusDto);
     }
 
     @Override

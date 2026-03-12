@@ -19,7 +19,7 @@ public class SchoolEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "esc_id")
-    private long escId;
+    private Long escId;
     @Column(name = "esc_name", nullable = false,length=150)
     private String escName;
     @Column(name = "esc_description", nullable = false,length=150)
@@ -33,7 +33,7 @@ public class SchoolEntity {
     @Column(name="esc_isactive",nullable = false,length=1)
     private String escState;
 
-    @OneToMany(mappedBy ="school", cascade=CascadeType.ALL,orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy ="school", cascade=CascadeType.MERGE,orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CampusEntity> campuses;
 
 }

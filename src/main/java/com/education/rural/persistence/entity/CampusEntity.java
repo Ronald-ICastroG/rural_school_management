@@ -28,7 +28,7 @@ public class CampusEntity {
     @Column(name = "Cam_Active")
     private Boolean campusActive=true;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.MERGE)
     @JoinColumn(name = "Cam_SchId",nullable = false)
     private SchoolEntity school;
     @OneToMany(mappedBy = "campus")

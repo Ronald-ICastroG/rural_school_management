@@ -1,11 +1,14 @@
 package com.education.rural.persistence.repository;
 
 import com.education.rural.domain.dto.CampusDto;
+import com.education.rural.domain.dto.UpdateCampusDto;
 import com.education.rural.domain.repository.CampusRepository;
 import com.education.rural.persistence.entity.CampusEntity;
 import com.education.rural.persistence.mapper.CampusMapper;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
+import java.beans.Transient;
 import java.util.List;
 
 @Repository
@@ -47,21 +50,51 @@ public class CampusEntityRepository implements CampusRepository {
         }
 
 
-    @Override
-    public CampusDto update(int id, CampusDto campusDto) {
-        CampusEntity campusEntity=this.jpaCampusRepository.findById(id).orElse(null);
-        if(campusEntity==null) {
-            throw new RuntimeException("Campus not found");
-        }
-        return this.campusMapper.toDto(this.jpaCampusRepository.save(campusMapper.toEntity(campusDto)));
-    }
+//    @Override
+//    @Transactional
+//    public CampusDto patch(int id, UpdateCampusDto updateCampusDto) {
+//        //Valido
+//        CampusEntity campusEntity=this.jpaCampusRepository.findById(id).orElseThrow(()->new RuntimeException("Campus not found"));
+//
+//
+//        //uso el dto con mappingTarget para cambiar solos campos que quiero en el dto
+////        if(updateCampusDto.campusName() != null) campusEntity.setCampusName(updateCampusDto.campusName());
+////        if(updateCampusDto.campusLocation() != null) campusEntity.setCampusLocation(updateCampusDto.campusLocation());
+////        if(updateCampusDto.campusActive() != null) campusEntity.setCampusActive(updateCampusDto.campusActive());
+////
+////        //guarda el update con lo necesario
+////        System.out.println("ID Escuela: " + campusEntity.getSchool().getEscId());
+//                this.campusMapper.UpdateCampusFromDto(updateCampusDto, campusEntity);
+//        return this.campusMapper.toDto((this.jpaCampusRepository.save(campusEntity)));
+//    }
+
+@Override
+@Transactional
+public CampusDto patch(int id, UpdateCampusDto updateCampusDto) {
+    CampusEntity campusEntity = this.jpaCampusRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Campus not found"));
+
+    // Bypassa el mapper completamente para probar
+    if (updateCampusDto.campusName() != null)
+        campusEntity.setCampusName(updateCampusDto.campusName());
+    if (updateCampusDto.campusLocation() != null)
+        campusEntity.setCampusLocation(updateCampusDto.campusLocation());
+    if (updateCampusDto.campusActive() != null)
+        campusEntity.setCampusActive(updateCampusDto.campusActive());
+
+    // El school NO se toca
+    System.out.println("School antes de save: " + campusEntity.getSchool());
+    System.out.println("Campus ID: " + campusEntity.getCampusId());
+
+    return this.campusMapper.toDto(this.jpaCampusRepository.save(campusEntity));
+}
+
+
 
     @Override
     public void deleteCampus(Integer id) {
-        CampusEntity campusEntity=this.jpaCampusRepository.findById(id).orElse(null);
-        if(campusEntity==null) {
-            throw new RuntimeException("Campus not found");
-        }
+        CampusEntity campusEntity=this.jpaCampusRepository.findById(id).orElseThrow(()->new RuntimeException("Campus not found"));
+
         this.jpaCampusRepository.deleteById(id);
         System.out.println("Campus "+campusEntity.toString()+" has been deleted");
 
