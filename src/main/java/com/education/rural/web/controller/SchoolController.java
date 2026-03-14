@@ -1,8 +1,8 @@
 package com.education.rural.web.controller;
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
-import com.education.rural.domain.service.ISchoolService;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
+import com.education.rural.domain.service.school.ISchoolService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.education.rural.persistence.repository;
+package com.education.rural.persistence.repository.campus;
 
 import com.education.rural.persistence.entity.CampusEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

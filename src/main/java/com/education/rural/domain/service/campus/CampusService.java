@@ -1,9 +1,8 @@
-package com.education.rural.domain.service;
+package com.education.rural.domain.service.campus;
 
-import com.education.rural.domain.dto.CampusDto;
-import com.education.rural.domain.dto.UpdateCampusDto;
+import com.education.rural.domain.dto.campus.CampusDto;
+import com.education.rural.domain.dto.campus.UpdateCampusDto;
 import com.education.rural.domain.repository.CampusRepository;
-import org.hibernate.sql.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

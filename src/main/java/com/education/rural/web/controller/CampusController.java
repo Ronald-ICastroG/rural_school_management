@@ -1,8 +1,8 @@
 package com.education.rural.web.controller;
 
-import com.education.rural.domain.dto.CampusDto;
-import com.education.rural.domain.dto.UpdateCampusDto;
-import com.education.rural.domain.service.ICampusService;
+import com.education.rural.domain.dto.campus.CampusDto;
+import com.education.rural.domain.dto.campus.UpdateCampusDto;
+import com.education.rural.domain.service.campus.ICampusService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

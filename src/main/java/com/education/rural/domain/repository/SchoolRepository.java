@@ -1,7 +1,7 @@
 package com.education.rural.domain.repository;
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
 
 import java.util.List;
 

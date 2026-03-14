@@ -1,14 +1,13 @@
-package com.education.rural.persistence.repository;
+package com.education.rural.persistence.repository.campus;
 
-import com.education.rural.domain.dto.CampusDto;
-import com.education.rural.domain.dto.UpdateCampusDto;
+import com.education.rural.domain.dto.campus.CampusDto;
+import com.education.rural.domain.dto.campus.UpdateCampusDto;
 import com.education.rural.domain.repository.CampusRepository;
 import com.education.rural.persistence.entity.CampusEntity;
 import com.education.rural.persistence.mapper.CampusMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import java.beans.Transient;
 import java.util.List;
 
 @Repository
@@ -62,7 +61,7 @@ public class CampusEntityRepository implements CampusRepository {
 ////        if(updateCampusDto.campusLocation() != null) campusEntity.setCampusLocation(updateCampusDto.campusLocation());
 ////        if(updateCampusDto.campusActive() != null) campusEntity.setCampusActive(updateCampusDto.campusActive());
 ////
-////        //guarda el update con lo necesario
+////        //guarda el patchGrade con lo necesario
 ////        System.out.println("ID Escuela: " + campusEntity.getSchool().getEscId());
 //                this.campusMapper.UpdateCampusFromDto(updateCampusDto, campusEntity);
 //        return this.campusMapper.toDto((this.jpaCampusRepository.save(campusEntity)));

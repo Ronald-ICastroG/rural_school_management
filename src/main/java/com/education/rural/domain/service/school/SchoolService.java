@@ -1,7 +1,7 @@
-package com.education.rural.domain.service;
+package com.education.rural.domain.service.school;
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
 import com.education.rural.domain.repository.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SchoolService implements ISchoolService{
+public class SchoolService implements ISchoolService {
     private final SchoolRepository schoolRepository;
 
     @Autowired

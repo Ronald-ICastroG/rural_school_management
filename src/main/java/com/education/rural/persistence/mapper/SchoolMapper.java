@@ -1,8 +1,8 @@
 package com.education.rural.persistence.mapper;
 
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
 import com.education.rural.persistence.entity.SchoolEntity;
 import org.mapstruct.*;
 

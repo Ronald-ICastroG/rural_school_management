@@ -1,7 +1,7 @@
-package com.education.rural.persistence.repository;
+package com.education.rural.persistence.repository.school;
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
 import com.education.rural.domain.repository.SchoolRepository;
 import com.education.rural.persistence.entity.SchoolEntity;
 import com.education.rural.persistence.mapper.SchoolMapper;

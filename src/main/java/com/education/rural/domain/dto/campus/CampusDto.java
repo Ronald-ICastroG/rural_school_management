@@ -1,8 +1,5 @@
-package com.education.rural.domain.dto;
+package com.education.rural.domain.dto.campus;
 
-import com.education.rural.persistence.entity.GradeEntity;
-import com.education.rural.persistence.entity.SchoolEntity;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jdk.jfr.BooleanFlag;
 

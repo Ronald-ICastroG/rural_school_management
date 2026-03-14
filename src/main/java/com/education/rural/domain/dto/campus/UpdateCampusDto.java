@@ -1,4 +1,4 @@
-package com.education.rural.domain.dto;
+package com.education.rural.domain.dto.campus;
 
 import jakarta.validation.constraints.NotBlank;
 import jdk.jfr.BooleanFlag;

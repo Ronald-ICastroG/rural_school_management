@@ -1,9 +1,8 @@
-package com.education.rural.domain.service;
+package com.education.rural.domain.service.school;
 
-import com.education.rural.domain.dto.SchoolDto;
-import com.education.rural.domain.dto.UpdateSchoolDto;
+import com.education.rural.domain.dto.school.SchoolDto;
+import com.education.rural.domain.dto.school.UpdateSchoolDto;
 import jakarta.validation.Valid;
-import org.hibernate.sql.Update;
 
 import java.util.List;
 

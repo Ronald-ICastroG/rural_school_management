@@ -1,4 +1,4 @@
-package com.education.rural.domain.dto;
+package com.education.rural.domain.dto.school;
 
 
 import jakarta.validation.constraints.NotBlank;
