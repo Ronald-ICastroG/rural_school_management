@@ -137,7 +137,7 @@ The data model is organized into functional domains:
 - [ ] Teacher & Teacher Profile
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
-- [ ] Azure deployment (AZ-204)
+- [ ] Deployment
 
 ---
 
