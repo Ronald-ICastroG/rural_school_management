@@ -11,9 +11,9 @@
 |---|---|
 | Java | 21 |
 | Spring Boot | 3.5.11 |
-| Gradle | 8.x |
+| Gradle | 8.14.4-bin |
 | MapStruct | 1.6.3 |
-| MySQL | 8.x |
+| MySQL | Latest |
 | Docker | Latest |
 | Springdoc OpenAPI (Swagger) | 2.7.0 |
 
@@ -123,7 +123,7 @@ The data model is organized into functional domains:
 - **Academic**: Subject → Academic Assignment → Gradebook
 - **Security**: User → Role
 
-> See full ERD diagram in `/docs/db_purpose.png`
+> See full ERD diagram in ![Database Model](docs/db_purpose.png)
 
 ---
 
