@@ -3,6 +3,9 @@ package com.education.rural.web.controller;
 import com.education.rural.domain.dto.grade.GradeDto;
 import com.education.rural.domain.dto.grade.UpdateGradeDto;
 import com.education.rural.domain.service.grade.IGradeService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/grade")
+@Tag(name="Grades",description = "Operations about grades ")
 public class GradeController {
 
     private final IGradeService gradeService;
@@ -21,7 +25,16 @@ public class GradeController {
     }
 
 
+
     @GetMapping
+    @Operation(
+            summary = "Ger all movies",
+            description = "Return all movies from database",
+            responses={
+                    @ApiResponse(responseCode = "200",description = "Found movies")
+
+    }
+    )
     public ResponseEntity<List<GradeDto>> findAll() {
         return ResponseEntity.ok(this.gradeService.findAllCampus());
     }
