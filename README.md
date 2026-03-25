@@ -132,7 +132,7 @@ The data model is organized into functional domains:
 - [x] School CRUD
 - [x] Campus CRUD
 - [x] Grade CRUD
-- [ ] Person & Contact
+- [x] Person & Contact
 - [ ] Student enrollment
 - [ ] Teacher & Teacher Profile
 - [ ] Subject & Gradebook
