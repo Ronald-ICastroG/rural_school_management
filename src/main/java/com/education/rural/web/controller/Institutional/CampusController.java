@@ -29,7 +29,7 @@ public class CampusController {
         return ResponseEntity.ok(this.campusService.findCampusById(id));
     }
 
-    @GetMapping("/named/{name}")
+    @GetMapping("/named/{firstName}")
     public ResponseEntity<CampusDto> getCampusByName(@PathVariable String name){
         return ResponseEntity.ok(this.campusService.findCampusByName(name));
     }
@@ -38,6 +38,7 @@ public class CampusController {
     public ResponseEntity<CampusDto> saveCampus(@RequestBody CampusDto campusDto){
         return new  ResponseEntity<>(this.campusService.saveCampus(campusDto),HttpStatus.CREATED);
     }
+
 
     @PatchMapping("/{id}")
     public ResponseEntity<CampusDto> patchCampus(@PathVariable Integer id,@RequestBody UpdateCampusDto updateCampusDto){

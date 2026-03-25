@@ -27,12 +27,12 @@ public interface CampusMapper {
     default SchoolEntity idToSchool(Long schoolId) {
         if (schoolId == null) return null;
         SchoolEntity school = new SchoolEntity();
-        school.setEscId(schoolId); // Asegúrate que el setter en SchoolEntity sea público
+        school.setEscId(schoolId);
         return school;
     }
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    @Mapping(target = "school", ignore = true) // NO toques la escuela en un PATCH de nombre/ubicación
+    @Mapping(target = "school", ignore = true)
     @Mapping(target = "grades", ignore = true)
     @Mapping(target = "campusId", ignore = true)
     void UpdateCampusFromDto(UpdateCampusDto dto, @MappingTarget CampusEntity entity);

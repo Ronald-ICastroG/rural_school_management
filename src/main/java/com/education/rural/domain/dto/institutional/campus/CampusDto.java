@@ -10,7 +10,7 @@ public record CampusDto (
     Integer campusId,
 
 
-    @NotBlank(message = "Not be a null or white campus name")
+    @NotBlank(message = "Not be a null or white campus firstName")
     String campusName,
 
     String campusLocation,

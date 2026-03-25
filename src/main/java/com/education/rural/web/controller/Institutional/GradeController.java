@@ -44,7 +44,7 @@ public class GradeController {
         return ResponseEntity.ok(this.gradeService.findById(id));
     }
 
-    @GetMapping("/named/{name}")
+    @GetMapping("/named/{firstName}")
     public ResponseEntity<GradeDto> findByName(@PathVariable String name) {
         return ResponseEntity.ok(this.gradeService.findByGradeNameIgnoreCase(name));
     }

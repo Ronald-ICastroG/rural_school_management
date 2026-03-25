@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public record SchoolDto(
 
     Long escId,
-    @NotBlank(message = "The name of the school cansnot be left blank.")
+    @NotBlank(message = "The firstName of the school cansnot be left blank.")
     String escName,
     String escDescription,
     String escAddress,

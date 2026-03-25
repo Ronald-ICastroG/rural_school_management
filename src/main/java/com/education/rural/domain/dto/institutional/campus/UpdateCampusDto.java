@@ -7,7 +7,7 @@ public record UpdateCampusDto (
 
 
 
-    @NotBlank(message = "The name of the campus dont be a blank space or  null ")
+    @NotBlank(message = "The firstName of the campus dont be a blank space or  null ")
     String campusName,
 
     String campusLocation,
