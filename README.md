@@ -1,127 +1,85 @@
-# 🏫 Rural School Management API
+🏫 Rural School Management API
 
-> REST API for managing rural schools, campuses, grades and academic resources.  
-> Built with Java 21, Spring Boot and Docker — ready to run in minutes.
+REST API for managing rural schools, campuses, grades, persons and contacts.
+Built with Java 21, Spring Boot and Docker — ready to run in minutes.
 
----
 
-## 🚀 Tech Stack
+🚀 Tech Stack
+TechnologyVersionJava21Spring Boot3.5.11Gradle8.xMapStruct1.6.3MySQLlatestDockerlatestSpringdoc OpenAPI (Swagger)2.7.0
 
-| Technology | Version |
-|---|---|
-| Java | 21 |
-| Spring Boot | 3.5.11 |
-| Gradle | 8.14.4-bin |
-| MapStruct | 1.6.3 |
-| MySQL | Latest |
-| Docker | Latest |
-| Springdoc OpenAPI (Swagger) | 2.7.0 |
-
----
-
-## 🏗️ Architecture
-
-The project follows a **layered architecture** with clear separation of responsibilities:
-
-```
+🏗️ Architecture
+The project follows a layered architecture with clear domain separation:
 src/
 ├── domain/
 │   ├── dto/
-│   │   ├── campus/        # CampusDto, UpdateCampusDto
-│   │   ├── grade/         # GradeDto, UpdateGradeDto
-│   │   └── school/        # SchoolDto, UpdateSchoolDto
-│   ├── repository/        # Domain interfaces (ports)
-│   └── service/           # Business logic interfaces + implementations
+│   │   ├── identity/
+│   │   │   ├── contact/       # ContactDto, UpdateContactDto
+│   │   │   └── person/        # PersonDto, UpdatePersonDto
+│   │   └── institutional/
+│   │       ├── campus/        # CampusDto, UpdateCampusDto
+│   │       ├── grade/         # GradeDto, UpdateGradeDto
+│   │       └── school/        # SchoolDto, UpdateSchoolDto
+│   ├── repository/
+│   │   ├── Identity/          # ContactRepository, PersonRepository
+│   │   └── Institutional/     # CampusRepository, GradeRepository, SchoolRepository
+│   └── service/
+│       ├── Identity/
+│       │   ├── contact/       # IContactService, ContactService
+│       │   └── person/        # IPersonService, PersonService
+│       └── Institutional/
+│           ├── campus/        # ICampusService, CampusService
+│           ├── grade/         # IGradeService, GradeService
+│           └── school/        # ISchoolService, SchoolService
 ├── persistence/
-│   ├── entity/            # JPA entities
-│   ├── mapper/            # MapStruct mappers
-│   └── repository/        # JPA repositories + implementations
+│   ├── entity/
+│   │   ├── Identity/          # ContactEntity, PersonEntity
+│   │   └── Institutional/     # CampusEntity, GradeEntity, SchoolEntity
+│   ├── mapper/
+│   │   ├── Identity/          # ContactMapper, PersonMapper
+│   │   └── Institutional/     # CampusMapper, GradeMapper, SchoolMapper
+│   └── repository/
+│       ├── Identity/
+│       │   ├── contact/       # ContactEntityRepository, JpaContactRepository
+│       │   └── person/        # PersonEntityRepository, JpaPersonRepository
+│       └── Institutional/
+│           ├── campus/        # CampusEntityRepository, JpaCampusRepository
+│           ├── grade/         # GradeEntityRepository, JpaGradeRepository
+│           └── school/        # SchoolEntityRepository, JpaSchoolRepository
 └── web/
-    └── controller/        # REST controllers
-```
+    └── controller/
+        ├── Identity/          # ContactController, PersonController
+        └── Institutional/     # CampusController, GradeController, SchoolController
 
----
+⚙️ Prerequisites
 
-## ⚙️ Prerequisites
+Java 21+
+Docker & Docker Compose
+Git
 
-- Java 21+
-- Docker & Docker Compose
-- Git
 
----
-
-## ▶️ Run the project
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/Ronald-ICastroG/rural_school_management.git
+▶️ Run the project
+1. Clone the repository
+bashgit clone https://github.com/Ronald-ICastroG/rural_school_management.git
 cd rural_school_management
-```
+2. Start with Docker Compose
+bashdocker compose up
+The API will be available at: http://localhost:8090/rc8/api
 
-**2. Start with Docker Compose**
-```bash
-docker compose up
-```
-
-The API will be available at: `http://localhost:8090/rc8/api`
-
----
-
-## 📖 API Documentation
-
+📖 API Documentation
 Once the project is running, access the interactive Swagger UI:
-
-```
 http://localhost:8090/rc8/api/swagger-ui/index.html
-```
 
----
-
-## 📡 Available Endpoints
-
-### 🏫 School
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/school` | Get all schools |
-| GET | `/school/{id}` | Get school by ID |
-| POST | `/school` | Create new school |
-| PATCH | `/school/{id}` | Update school data |
-| DELETE | `/school/{id}` | Delete school |
-
-### 🏢 Campus
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/campus` | Get all campuses |
-| GET | `/campus/{id}` | Get campus by ID |
-| GET | `/campus/name/{name}` | Get campus by name |
-| POST | `/campus` | Create new campus |
-| PATCH | `/campus/{id}` | Update campus data |
-| DELETE | `/campus/{id}` | Delete campus by ID |
-| DELETE | `/campus/name/{name}` | Delete campus by name |
-
-### 📚 Grades
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/grade` | Get all grades |
-| GET | `/grade/{id}` | Get grade by ID |
-| GET | `/grade/name/{name}` | Get grades by name |
-| POST | `/grade` | Create new grade |
-| PATCH | `/grade/{id}` | Update grade data |
-| DELETE | `/grade/{id}` | Delete grade by ID |
-
----
-
-## 🗂️ Database Model
-
-The data model is organized into functional domains:
-
-- **Institutional**: School → Campus → Grade
-- **Identity**: Person → Student / Teacher / Staff
-- **Academic**: Subject → Academic Assignment → Gradebook
-- **Security**: User → Role
+📡 Available Endpoints
+🏫 School
+MethodEndpointDescriptionGET/schoolGet all schoolsGET/school/{id}Get school by IDPOST/schoolCreate new schoolPATCH/school/{id}Update school dataDELETE/school/{id}Delete school
+🏢 Campus
+MethodEndpointDescriptionGET/campusGet all campusesGET/campus/{id}Get campus by IDGET/campus/name/{name}Get campus by namePOST/campusCreate new campusPATCH/campus/{id}Update campus dataDELETE/campus/{id}Delete campus by IDDELETE/campus/name/{name}Delete campus by name
+📚 Grade
+MethodEndpointDescriptionGET/gradeGet all gradesGET/grade/{id}Get grade by IDGET/grade/name/{name}Get grades by namePOST/gradeCreate new gradePATCH/grade/{id}Update grade dataDELETE/grade/{id}Delete grade by ID
+👤 Person
+MethodEndpointDescriptionGET/personGet all personsGET/person/{id}Get person by IDPOST/personCreate new personPATCH/person/{id}Update person dataDELETE/person/{id}Delete person
+📞 Contact
+MethodEndpointDescriptionGET/contactGet all contactsGET/contact/{id}Get contact by IDPOST/contactCreate new contactPATCH/contact/{id}Update contact dataDELETE/contact/{id}Delete contact
 
 > See full ERD diagram in ![Database Model](docs/db_purpose.png)
 
@@ -132,9 +90,13 @@ The data model is organized into functional domains:
 - [x] School CRUD
 - [x] Campus CRUD
 - [x] Grade CRUD
-- [x] Person & Contact
+- [x] Person CRUD
+- [x] Contact CRUD
+- [x]  Swagger/OpenAPI documentation
+- [x]  Domain-based package structure
 - [ ] Student enrollment
 - [ ] Teacher & Teacher Profile
+- [ ] Staff
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
 - [ ] Deployment
@@ -153,3 +115,4 @@ Magíster en Ingeniería Industrial | Java Backend Developer
 ## 📄 License
 
 This project is for portfolio purposes.
+
