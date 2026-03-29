@@ -159,6 +159,139 @@ The data model is organized into functional domains:
 
 ![Database Model](docs/db_purpose.png)
 
+```mermaid
+erDiagram
+    School {
+        int Sch_Id PK
+        varchar Sch_Name
+        varchar Sch_Description
+        varchar Sch_Address
+        date Sch_Foundation
+        tinyint Sch_IsActive
+    }
+
+    Campus {
+        int Cam_Id PK
+        varchar Cam_Name
+        varchar Cam_Location
+        tinyint Cam_Active
+        int Cam_SchId FK
+    }
+
+    Academic_Assignment {
+        int Asi_Id PK
+        int Asi_Year
+    }
+
+    Grade {
+        int Grd_Id PK
+        varchar Grd_Name
+        tinyint Grd_Active
+        int Grd_CamId FK
+        int Asi_Id FK
+    }
+
+    Person {
+        int Per_Id PK
+        varchar Per_Fname
+        varchar Per_Lname
+        varchar Per_DNI
+        date Per_Birthdate
+    }
+
+    Contact {
+        int Con_Id PK
+        varchar Con_Phone
+        varchar Con_Email
+        text Con_Address
+        int Con_PerId FK
+    }
+
+    Student {
+        int Stu_Id PK
+        date Stu_EnrollmentDate
+        int Per_Id FK
+        int Grd_Id FK
+        tinyint Stu_Active
+    }
+
+    Teacher_Profile {
+        int Tpf_Id PK
+        varchar Tpf_Name
+        varchar Tpf_Description
+    }
+
+    Teacher {
+        int Tea_Id PK
+        tinyint Tea_Status
+        int Tpf_Id FK
+        int Per_Id FK
+        int Asi_Id FK
+    }
+
+    Staff {
+        int Stf_Id PK
+        int Per_Id FK
+        varchar Stf_Position
+        int Sch_Id FK
+        int Cam_Id FK
+    }
+
+    Subject {
+        int Sub_Id PK
+        varchar Sub_Name
+        text Sub_Description
+        int Asi_Id FK
+    }
+
+    Gradebook {
+        int Gbk_Id PK
+        decimal Gbk_Value
+        int Stu_Id FK
+        int Asi_Id FK
+    }
+
+    Role {
+        int Rol_Id PK
+        varchar Rol_Name
+        tinyint Rol_Active
+    }
+
+    User {
+        int Usr_Id PK
+        varchar Usr_Name
+        varchar Usr_Password
+        tinyint Usr_Active
+        int Per_Id FK
+    }
+
+    User_has_Role {
+        int Usr_Id FK
+        int Rol_Id FK
+    }
+
+    School ||--o{ Campus : "has"
+    Campus ||--o{ Grade : "has"
+    Academic_Assignment ||--o{ Grade : "assigned to"
+    Person ||--o{ Contact : "has"
+    Person ||--o| Student : "is"
+    Person ||--o| Teacher : "is"
+    Person ||--o| Staff : "is"
+    Person ||--o| User : "has account"
+    Grade ||--o{ Student : "enrolled in"
+    Teacher_Profile ||--o{ Teacher : "defines"
+    Academic_Assignment ||--o{ Teacher : "teaches"
+    Academic_Assignment ||--o{ Subject : "contains"
+    Academic_Assignment ||--o{ Gradebook : "evaluated in"
+    Student ||--o{ Gradebook : "has grades"
+    School ||--o{ Staff : "employs"
+    Campus ||--o{ Staff : "works at"
+    User }o--o{ Role : "has"
+    User ||--o{ User_has_Role : ""
+    Role ||--o{ User_has_Role : ""
+```
+
+
 ---
 
 ## 🛣️ Roadmap
