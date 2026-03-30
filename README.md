@@ -302,7 +302,7 @@ erDiagram
 - [x] Person CRUD
 - [x] Contact CRUD
 - [x] Swagger/OpenAPI documentation
-- [x] Domain-based package structure
+- [x] **Domain-based package structure**
 - [ ] Student enrollment
 - [ ] Teacher & Teacher Profile
 - [ ] Staff
