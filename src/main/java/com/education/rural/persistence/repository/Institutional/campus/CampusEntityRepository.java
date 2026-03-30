@@ -64,7 +64,7 @@ public class CampusEntityRepository implements CampusRepository {
 ////        //guarda el patchGrade con lo necesario
 ////        System.out.println("ID Escuela: " + campusEntity.getSchool().getEscId());
 //                this.campusMapper.UpdateCampusFromDto(updateCampusDto, campusEntity);
-//        return this.campusMapper.toDto((this.jpaCampusRepository.save(campusEntity)));
+//        return this.campusMapper.toStudentDto((this.jpaCampusRepository.save(campusEntity)));
 //    }
 
 @Override

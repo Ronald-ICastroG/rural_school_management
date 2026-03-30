@@ -128,23 +128,41 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 
 ### 👤 Person
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/person` | Get all persons |
-| GET | `/person/{id}` | Get person by ID |
-| POST | `/person` | Create new person |
-| PATCH | `/person/{id}` | Update person data |
-| DELETE | `/person/{id}` | Delete person |
+| Method | Endpoint                   | Description          |
+|---|----------------------------|----------------------|
+| GET | `/person`                  | Get all persons      |
+| GET | `/person/{id}`             | Get person by ID     |
+| GET | `/person/named/{name}`     | Get person by Name   |
+| GET | `/person/dni/{dni}`        | Get person by Dni    |
+| POST | `/person`                  | Create new person    |
+| PATCH | `/person/{id}`             | Update person data   |
+| DELETE | `/person/{id}`             | Delete person By Dni |
+| DELETE | `/person//dni/{personDni}` | Delete person by Dni |
 
 ### 📞 Contact
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/contact` | Get all contacts |
-| GET | `/contact/{id}` | Get contact by ID |
-| POST | `/contact` | Create new contact |
-| PATCH | `/contact/{id}` | Update contact data |
-| DELETE | `/contact/{id}` | Delete contact |
+| Method | Endpoint                | Description             |
+|--------|-------------------------|-------------------------|
+| GET    | `/contact`              | Get all contacts        |
+| GET    | `/contact/{id}`         | Get contact by ID       |
+| GET    | `contact/mail/{email}`  | Get contact by email    |
+| POST   | `/contact`              | Create new contact      |
+| UPDATE | `/contact/{id}`         | Update contact data     |
+| PATCH  | `/contact/{id}`         | Patch contact data      |
+| DELETE | `/contact/{id}`         | Delete contact          |
+| DELETE | `/contact/mail/{email}` | Delete contact by Email |
+
+### 👨‍💻 Student
+
+| Method | Endpoint               | Description         |
+|---|------------------------|---------------------|
+| GET | `/person/student`      | Get all students    |
+| GET | `/person/student/{id}` | Get student by ID   |
+| POST | `/person/student`      | Create new student  |
+| PATCH | `/person/student/{id}` | Update student data |
+| DELETE | `/contact/{id}`        | Delete student      |
+
+
 
 ---
 
@@ -303,7 +321,7 @@ erDiagram
 - [x] Contact CRUD
 - [x] Swagger/OpenAPI documentation
 - [x] **Domain-based package structure**
-- [ ] Student enrollment
+- [x] Student enrollment
 - [ ] Teacher & Teacher Profile
 - [ ] Staff
 - [ ] Subject & Gradebook
