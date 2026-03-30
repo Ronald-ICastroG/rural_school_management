@@ -4,10 +4,7 @@ package com.education.rural.persistence.mapper.Identity.specialization;
 import com.education.rural.domain.dto.Identity.specialization.teacher.profile.TeacherProfileDto;
 import com.education.rural.domain.dto.Identity.specialization.teacher.profile.UpdateTeacherProfileDto;
 import com.education.rural.persistence.entity.Identity.specialization.TeacherProfileEntity;
-import org.mapstruct.BeanMapping;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -25,5 +22,5 @@ public interface TeacherProfileMapper {
 
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateTeacherToDto(UpdateTeacherProfileDto dto,TeacherProfileEntity entity);
+    void updateTeacherToDto(UpdateTeacherProfileDto dto,@MappingTarget TeacherProfileEntity entity);
 }
