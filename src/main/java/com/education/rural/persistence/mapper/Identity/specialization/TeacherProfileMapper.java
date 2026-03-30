@@ -1,8 +1,8 @@
 package com.education.rural.persistence.mapper.Identity.specialization;
 
 
-import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherProfileDto;
-import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.TeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.UpdateTeacherProfileDto;
 import com.education.rural.persistence.entity.Identity.specialization.TeacherProfileEntity;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.InheritInverseConfiguration;

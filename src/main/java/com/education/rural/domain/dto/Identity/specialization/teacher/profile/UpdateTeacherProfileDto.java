@@ -1,4 +1,4 @@
-package com.education.rural.domain.dto.Identity.specialization.teacher;
+package com.education.rural.domain.dto.Identity.specialization.teacher.profile;
 
 public record UpdateTeacherProfileDto(
         String profileName,

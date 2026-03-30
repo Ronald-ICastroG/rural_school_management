@@ -1,7 +1,7 @@
 package com.education.rural.persistence.repository.Identity.specialization.teacher.profile;
 
-import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherProfileDto;
-import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.TeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.UpdateTeacherProfileDto;
 import com.education.rural.domain.repository.Identity.specialization.TeacherProfileRepository;
 import com.education.rural.persistence.entity.Identity.specialization.TeacherProfileEntity;
 import com.education.rural.persistence.mapper.Identity.specialization.TeacherProfileMapper;

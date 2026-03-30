@@ -152,7 +152,7 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 | DELETE | `/contact/{id}`         | Delete contact          |
 | DELETE | `/contact/mail/{email}` | Delete contact by Email |
 
-### 👨‍💻 Student
+### 🧑‍🎓👩‍🎓 Student
 
 | Method | Endpoint               | Description         |
 |---|------------------------|---------------------|
@@ -162,6 +162,16 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 | PATCH | `/person/student/{id}` | Update student data |
 | DELETE | `/contact/{id}`        | Delete student      |
 
+### 👨‍💻 Teachers Profile
+
+| Method | Endpoint                       | Description                         |
+|---|--------------------------------|-------------------------------------|
+| GET | `/teacher/profile`             | Get all TeachersProfiles            |
+| GET | `/teacher/profile/{id}`        | Get Teachers profile by ID          |
+| GET | `/teacher/profile/name/{name}` | Get Teachers profile by profileName |
+| POST | `/teacher/profile`             | Create new Teachers profile         |
+| PATCH | `/teacher/profile/{id}`        | Update Teachers profile data        |
+| DELETE | `/teacher/profile/{id}`        | Delete Teachers profile             |
 
 
 ---
@@ -326,6 +336,7 @@ erDiagram
 - [ ] Staff
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
+- [ ] Some Tests
 - [ ] deployment
 
 ---

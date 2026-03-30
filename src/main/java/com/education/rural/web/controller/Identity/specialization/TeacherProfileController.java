@@ -1,7 +1,7 @@
 package com.education.rural.web.controller.Identity.specialization;
 
-import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherProfileDto;
-import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.TeacherProfileDto;
+import com.education.rural.domain.dto.Identity.specialization.teacher.profile.UpdateTeacherProfileDto;
 import com.education.rural.domain.service.Identity.specialization.teacher.profile.ITeacherProfileService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -43,7 +43,7 @@ private final ITeacherProfileService teacherProfileService;
         return ResponseEntity.ok(this.teacherProfileService.findById(id));
     }
 
-    @GetMapping("/profile/{profileName}")
+    @GetMapping("/name/{profileName}")
     @Operation(summary = "Get teacher profile using profile name",
             responses =
             @ApiResponse(responseCode = "200",description = "Ok, found Teacher profile using profile name")
