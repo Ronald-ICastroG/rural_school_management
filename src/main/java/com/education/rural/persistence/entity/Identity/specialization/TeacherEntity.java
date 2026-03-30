@@ -22,7 +22,7 @@ public class TeacherEntity {
     private Long teacherId;
 
     @Column(name = "Tea_Active")
-    private Boolean active=true;
+    private Boolean teacherActive=true;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="Tea_TpfId")

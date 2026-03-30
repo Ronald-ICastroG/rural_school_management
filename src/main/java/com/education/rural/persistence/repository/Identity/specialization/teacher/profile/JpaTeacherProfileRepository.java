@@ -4,7 +4,8 @@ package com.education.rural.persistence.repository.Identity.specialization.teach
 import com.education.rural.persistence.entity.Identity.specialization.TeacherProfileEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface JpaTeacherProfileRepository extends JpaRepository<TeacherProfileEntity, Integer> {
+public interface JpaTeacherProfileRepository extends JpaRepository<TeacherProfileEntity,Integer> {
 
-    TeacherProfileEntity findFirstByProfileNameIgnoreCase(String profileName);
+    TeacherProfileEntity findFirstByProfileNameIgnoreCase(String name);
+
 }

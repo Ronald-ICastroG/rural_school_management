@@ -66,7 +66,7 @@ public class ContactEntityRepository implements ContactRepository {
     public void deleteContactById(Integer id) {
         ContactEntity contactEntity=this.jpaContactRepository.findById(id).orElseThrow(()->new RuntimeException("contact not found"));
         this.jpaContactRepository.delete(contactEntity);
-        System.out.println("deleteGyContactId contact successfully");
+        System.out.println("delete By contactId contact successfully");
 
     }
 
