@@ -162,6 +162,18 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 | PATCH | `/person/student/{id}` | Update student data |
 | DELETE | `/contact/{id}`        | Delete student      |
 
+### 👨‍🏫👩‍🏫 Teacher
+
+| Method | Endpoint           | Description      |
+|---|--------------------|------------------|
+| GET | `/teacher`        | Get all Teachers |
+| GET | `/teacher/{id}`    | Get Teacher by ID |
+| POST | `/teacher`         | Create new Teacher |
+| PATCH | `/teacher/{id}` | Update Teacher data |
+| DELETE | `/teacher/{id}` | Delete Teacher By ID |
+
+
+
 ### 👨‍💻 Teachers Profile
 
 | Method | Endpoint                       | Description                         |
@@ -332,7 +344,7 @@ erDiagram
 - [x] Swagger/OpenAPI documentation
 - [x] **Domain-based package structure**
 - [x] Student enrollment
-- [ ] Teacher & Teacher Profile
+- [x] Teacher & Teacher Profile
 - [ ] Staff
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
