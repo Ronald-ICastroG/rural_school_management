@@ -78,7 +78,7 @@ public class PersonController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = " delete person giving pathVariable person Id",
+    @Operation(summary = " deleteById person giving pathVariable person Id",
             responses =
             @ApiResponse(responseCode = "204",description = "No content, person deleted")
     )
@@ -88,7 +88,7 @@ public class PersonController {
     }
 
     @DeleteMapping("/dni/{personDni}")
-    @Operation(summary = " delete person giving pathVariable personDni",
+    @Operation(summary = " deleteById person giving pathVariable personDni",
             responses =
             @ApiResponse(responseCode = "204",description = "No content, person deleted,JPQL method created as jpaPersonRepository named deleteByPersonDniIgnoreCase")
     )

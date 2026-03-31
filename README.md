@@ -186,6 +186,18 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 | DELETE | `/teacher/profile/{id}`        | Delete Teachers profile             |
 
 
+
+### 👨‍💼Staff Profile
+
+| Method | Endpoint      | Description                        |
+|---|---------------|------------------------------------|
+| GET | `/staff`      | Get all staffMembers               |
+| GET | `/staff/{id}` | Get StaffMembers by ID             |
+| POST | `/staff`      | Create new staff members           |
+| PATCH | `/staff/{id}` | Update staff memebers profile data |
+| DELETE | `/staff/{id}` | Delete staff member by id          |
+
+
 ---
 
 ## 🗂️ Database Model
@@ -345,7 +357,7 @@ erDiagram
 - [x] **Domain-based package structure**
 - [x] Student enrollment
 - [x] Teacher & Teacher Profile
-- [ ] Staff
+- [x] Staff
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
 - [ ] Some Tests

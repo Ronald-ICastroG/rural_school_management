@@ -3,11 +3,10 @@ package com.education.rural.web.controller.Identity.specialization;
 
 import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherDto;
 import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherDto;
-import com.education.rural.domain.service.Identity.specialization.teacher.profile.ITeacherService;
+import com.education.rural.domain.service.Identity.specialization.teacher.ITeacherService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.hibernate.sql.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

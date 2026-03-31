@@ -70,7 +70,7 @@ public class CampusController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = " delete campus giving pathVariable campus Id",
+    @Operation(summary = " deleteById campus giving pathVariable campus Id",
             responses =
             @ApiResponse(responseCode = "204",description = "No content")
     )

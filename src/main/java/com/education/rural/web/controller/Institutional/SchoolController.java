@@ -64,7 +64,7 @@ public class SchoolController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = " delete school giving pathVariable school Id",
+    @Operation(summary = " deleteById school giving pathVariable school Id",
             responses =
             @ApiResponse(responseCode = "204",description = "No content, school deleted")
     )

@@ -1,10 +1,8 @@
-package com.education.rural.domain.service.Identity.specialization.teacher.profile;
+package com.education.rural.domain.service.Identity.specialization.teacher;
 
-import com.education.rural.domain.dto.Identity.contact.UpdateContactDto;
 import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherDto;
 import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherDto;
 import com.education.rural.domain.repository.Identity.specialization.TeacherRepository;
-import com.education.rural.persistence.repository.Identity.specialization.teacher.JpaTeacherRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

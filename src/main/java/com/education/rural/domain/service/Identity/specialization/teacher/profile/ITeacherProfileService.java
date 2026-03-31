@@ -7,15 +7,10 @@ import java.util.List;
 
 public interface ITeacherProfileService {
 
-    List<TeacherProfileDto> findAll();
-
-    TeacherProfileDto findById(Integer id);
-
-    TeacherProfileDto findByProfileName(String profileName);
-
+    List<TeacherProfileDto> findAllTeacherProfile();
+    TeacherProfileDto findTeacherProfileById(Integer id);
+    TeacherProfileDto findFirstByProfileNameIgnoreCase(String name);
     TeacherProfileDto saveProfile(TeacherProfileDto teacherProfileDto);
-
-    TeacherProfileDto updateProfile(Integer id, UpdateTeacherProfileDto updateTeacherProfileDto);
-
-    void deleteTeacherProfileByid(Integer id);
+    TeacherProfileDto patchTeacherProfile(Integer id,UpdateTeacherProfileDto updateTeacherProfileDto);
+    void deleteTeacherProfileById(Integer id);
 }
