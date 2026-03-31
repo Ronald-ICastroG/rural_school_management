@@ -1,6 +1,6 @@
 # 🏫 Rural School Management API
 
-> REST API for managing rural schools, campuses, grades, persons and contacts.
+> REST API for managing rural schools, campuses, grades, persons, contacts, students, teachers and staff.
 > Built with Java 21, Spring Boot and Docker — ready to run in minutes.
 
 ---
@@ -26,30 +26,29 @@ The project follows a **layered architecture** with clear domain separation:
 **domain/**
 - `dto/identity/contact` — ContactDto, UpdateContactDto
 - `dto/identity/person` — PersonDto, UpdatePersonDto
+- `dto/identity/specialization/student` — StudentDto, UpdateStudentDto
+- `dto/identity/specialization/teacher` — TeacherDto, UpdateTeacherDto
+- `dto/identity/specialization/teacherProfile` — TeacherProfileDto, UpdateTeacherProfileDto
+- `dto/identity/specialization/staff` — StaffDto, UpdateStaffDto
 - `dto/institutional/campus` — CampusDto, UpdateCampusDto
 - `dto/institutional/grade` — GradeDto, UpdateGradeDto
 - `dto/institutional/school` — SchoolDto, UpdateSchoolDto
-- `repository/Identity` — ContactRepository, PersonRepository
+- `repository/Identity` — ContactRepository, PersonRepository, StudentRepository, TeacherRepository, TeacherProfileRepository, StaffRepository
 - `repository/Institutional` — CampusRepository, GradeRepository, SchoolRepository
-- `service/Identity/contact` — IContactService, ContactService
-- `service/Identity/person` — IPersonService, PersonService
-- `service/Institutional/campus` — ICampusService, CampusService
-- `service/Institutional/grade` — IGradeService, GradeService
-- `service/Institutional/school` — ISchoolService, SchoolService
+- `service/Identity` — ContactService, PersonService, StudentService, TeacherService, TeacherProfileService, StaffService
+- `service/Institutional` — CampusService, GradeService, SchoolService
 
 **persistence/**
-- `entity/Identity` — ContactEntity, PersonEntity
+- `entity/Identity` — ContactEntity, PersonEntity, StudentEntity, TeacherEntity, TeacherProfileEntity, StaffEntity
 - `entity/Institutional` — CampusEntity, GradeEntity, SchoolEntity
-- `mapper/Identity` — ContactMapper, PersonMapper
+- `mapper/Identity` — ContactMapper, PersonMapper, StudentMapper, TeacherMapper, TeacherProfileMapper, StaffMapper
 - `mapper/Institutional` — CampusMapper, GradeMapper, SchoolMapper
-- `repository/Identity/contact` — ContactEntityRepository, JpaContactRepository
-- `repository/Identity/person` — PersonEntityRepository, JpaPersonRepository
-- `repository/Institutional/campus` — CampusEntityRepository, JpaCampusRepository
-- `repository/Institutional/grade` — GradeEntityRepository, JpaGradeRepository
-- `repository/Institutional/school` — SchoolEntityRepository, JpaSchoolRepository
+- `repository/Identity` — ContactEntityRepository, PersonEntityRepository, StudentEntityRepository, TeacherEntityRepository, TeacherProfileEntityRepository, StaffEntityRepository
+- `repository/Institutional` — CampusEntityRepository, GradeEntityRepository, SchoolEntityRepository
 
 **web/controller/**
 - `Identity` — ContactController, PersonController
+- `Identity/specialization` — StudentController, TeacherController, TeacherProfileController, StaffController
 - `Institutional` — CampusController, GradeController, SchoolController
 
 ---
@@ -360,7 +359,7 @@ erDiagram
 - [x] Staff
 - [ ] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
-- [ ] Some Tests
+- [ ] Some Tests & Manage Errors
 - [ ] deployment
 
 ---
