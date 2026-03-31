@@ -17,5 +17,5 @@ public interface TeacherProfileRepository {
 
     TeacherProfileDto patch(Integer id, UpdateTeacherProfileDto updateTeacherProfileDto);
 
-    void delete(Integer id);
+    void deleteById(Integer id);
 }

@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/teacher/profile")
-@Tag(name="Teachers profile")
+@Tag(name="Teachers_profile")
 public class TeacherProfileController {
 
 
@@ -31,7 +31,7 @@ private final ITeacherProfileService teacherProfileService;
             @ApiResponse(responseCode = "200",description = "Ok, found ALl TeachersProfiles")
     )
     public ResponseEntity<List<TeacherProfileDto>>findAllTeacherProfile() {
-        return ResponseEntity.ok(this.teacherProfileService.findAll());
+        return ResponseEntity.ok(this.teacherProfileService.findAllTeacherProfile());
     }
 
     @GetMapping("/{id}")
@@ -40,7 +40,7 @@ private final ITeacherProfileService teacherProfileService;
             @ApiResponse(responseCode = "200",description = "Ok, found Teacher profile using id")
     )
     public ResponseEntity<TeacherProfileDto> findTeacherProfileById(@PathVariable Integer id) {
-        return ResponseEntity.ok(this.teacherProfileService.findById(id));
+        return ResponseEntity.ok(this.teacherProfileService.findTeacherProfileById(id));
     }
 
     @GetMapping("/name/{profileName}")
@@ -49,7 +49,7 @@ private final ITeacherProfileService teacherProfileService;
             @ApiResponse(responseCode = "200",description = "Ok, found Teacher profile using profile name")
     )
     public  ResponseEntity<TeacherProfileDto> saveTeacherProfile(@PathVariable String profileName) {
-        return ResponseEntity.ok(this.teacherProfileService.findByProfileName(profileName));
+        return ResponseEntity.ok(this.teacherProfileService.findFirstByProfileNameIgnoreCase(profileName));
     }
 
     @PostMapping
@@ -67,16 +67,16 @@ private final ITeacherProfileService teacherProfileService;
             @ApiResponse(responseCode = "202",description = "Change Accepted for teachers profile")
     )
     public  ResponseEntity<TeacherProfileDto> updateTeacherProfile(@PathVariable Integer id, @RequestBody UpdateTeacherProfileDto dto) {
-        return new ResponseEntity<>(this.teacherProfileService.updateProfile(id,dto), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(this.teacherProfileService.patchTeacherProfile(id,dto), HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("{id}")
-    @Operation(summary = "delete TeacherProfile giving id on path",
+    @Operation(summary = "deleteById TeacherProfile giving id on path",
             responses =
             @ApiResponse(responseCode = "204",description = "No content")
     )
     public ResponseEntity<Void> deleteTeacherProfile(@PathVariable Integer id) {
-        this.teacherProfileService.deleteTeacherProfileByid(id);
+        this.teacherProfileService.deleteTeacherProfileById(id);
         return ResponseEntity.noContent().build();
     }
 }

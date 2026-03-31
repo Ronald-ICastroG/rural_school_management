@@ -52,7 +52,7 @@ public class TeacherProfileEntityRepository implements TeacherProfileRepository 
     }
 
     @Override
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         if (this.jpaTeacherProfileRepository.existsById(id)) {
             this.jpaTeacherProfileRepository.deleteById(id);
         }

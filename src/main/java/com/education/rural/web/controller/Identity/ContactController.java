@@ -80,7 +80,7 @@ public class ContactController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = " delete contact giving pathVariable contac Id and json parameters",
+    @Operation(summary = " deleteById contact giving pathVariable contac Id and json parameters",
             responses =
             @ApiResponse(responseCode = "204",description = "No content, contact deleted")
     )
@@ -89,7 +89,7 @@ public class ContactController {
         return  ResponseEntity.noContent().build();
     }
     @DeleteMapping("/mail/{email}")
-    @Operation(summary = " delete contact giving pathVariable contact email and json parameters",
+    @Operation(summary = " deleteById contact giving pathVariable contact email and json parameters",
             responses =
             @ApiResponse(responseCode = "204",description = "No content, contact deleted, JPQL method created as JpaContactRepository DeleteByContactEmailIgnoreCase")
     )
