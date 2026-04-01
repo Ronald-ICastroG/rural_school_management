@@ -8,14 +8,14 @@
 ## 🚀 Tech Stack
 
 | Technology | Version |
-|---|---|
-| Java | 21 |
-| Spring Boot | 3.5.11 |
-| Gradle | 8.x |
-| MapStruct | 1.6.3 |
-| MySQL | latest |
-| Docker | latest |
-| Springdoc OpenAPI (Swagger) | 2.7.0 |
+|---|---------|
+| Java | 21      |
+| Spring Boot | 3.5.11  |
+| Gradle | 8.14.4  |
+| MapStruct | 1.6.3   |
+| MySQL | latest  |
+| Docker | latest  |
+| Springdoc OpenAPI (Swagger) | 2.7.0   |
 
 ---
 
@@ -33,23 +33,32 @@ The project follows a **layered architecture** with clear domain separation:
 - `dto/institutional/campus` — CampusDto, UpdateCampusDto
 - `dto/institutional/grade` — GradeDto, UpdateGradeDto
 - `dto/institutional/school` — SchoolDto, UpdateSchoolDto
+- `dto/academic/academicAssignment` — AcademicAssignmentDto, UpdateAcademicAssignmentDto
+- `dto/academic/subject` — SubjectDto, UpdateSubjectDto
+- `dto/academic/gradebook` — GradebookDto, UpdateGradebookDto
 - `repository/Identity` — ContactRepository, PersonRepository, StudentRepository, TeacherRepository, TeacherProfileRepository, StaffRepository
 - `repository/Institutional` — CampusRepository, GradeRepository, SchoolRepository
+- `repository/Academic` — AcademicAssignmentRepository, SubjectRepository, GradebookRepository
 - `service/Identity` — ContactService, PersonService, StudentService, TeacherService, TeacherProfileService, StaffService
 - `service/Institutional` — CampusService, GradeService, SchoolService
+- `service/Academic` — AcademicAssignmentService, SubjectService, GradebookService
 
 **persistence/**
 - `entity/Identity` — ContactEntity, PersonEntity, StudentEntity, TeacherEntity, TeacherProfileEntity, StaffEntity
 - `entity/Institutional` — CampusEntity, GradeEntity, SchoolEntity
+- `entity/Academic` — AcademicAssignmentEntity, SubjectEntity, GradebookEntity
 - `mapper/Identity` — ContactMapper, PersonMapper, StudentMapper, TeacherMapper, TeacherProfileMapper, StaffMapper
 - `mapper/Institutional` — CampusMapper, GradeMapper, SchoolMapper
+- `mapper/Academic` — AcademicAssignmentMapper, SubjectMapper, GradebookMapper
 - `repository/Identity` — ContactEntityRepository, PersonEntityRepository, StudentEntityRepository, TeacherEntityRepository, TeacherProfileEntityRepository, StaffEntityRepository
 - `repository/Institutional` — CampusEntityRepository, GradeEntityRepository, SchoolEntityRepository
+- `repository/Academic` — AcademicAssignmentEntityRepository, SubjectEntityRepository, GradebookEntityRepository
 
 **web/controller/**
 - `Identity` — ContactController, PersonController
 - `Identity/specialization` — StudentController, TeacherController, TeacherProfileController, StaffController
 - `Institutional` — CampusController, GradeController, SchoolController
+- `Academic` — AcademicAssignmentController, SubjectController, GradebookController
 
 ---
 
@@ -195,7 +204,37 @@ http://localhost:8090/rc8/api/swagger-ui/index.html
 | POST | `/staff`      | Create new staff members           |
 | PATCH | `/staff/{id}` | Update staff memebers profile data |
 | DELETE | `/staff/{id}` | Delete staff member by id          |
+### 📅 Academic Assignment
 
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/academic/assignment` | Get all assignments |
+| GET | `/academic/assignment/{id}` | Get assignment by ID |
+| POST | `/academic/assignment` | Create new assignment |
+| PATCH | `/academic/assignment/{id}` | Update assignment |
+| DELETE | `/academic/assignment/{id}` | Delete assignment |
+
+### 📖 Subject
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/academic/subject` | Get all subjects |
+| GET | `/academic/subject/{id}` | Get subject by ID |
+| GET | `/academic/subject/name/{name}` | Get subject by name |
+| POST | `/academic/subject` | Create new subject |
+| PATCH | `/academic/subject/{id}` | Update subject |
+| DELETE | `/academic/subject/{id}` | Delete subject by ID |
+| DELETE | `/academic/subject/name/{name}` | Delete subject by name |
+
+### 📝 Gradebook
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/academic/gradebook` | Get all gradebook entries |
+| GET | `/academic/gradebook/{id}` | Get entry by ID |
+| POST | `/academic/gradebook` | Create new entry |
+| PATCH | `/academic/gradebook/{id}` | Update entry |
+| DELETE | `/academic/gradebook/{id}` | Delete entry |
 
 ---
 
@@ -205,8 +244,8 @@ The data model is organized into functional domains:
 
 - **Institutional**: School → Campus → Grade
 - **Identity**: Person → Contact → Student / Teacher / Staff
-- **Academic**: Subject → Academic Assignment → Gradebook
-- **Security**: User → Role
+- **Academic**: AcademicAssignment → Subject → Gradebook
+- **Security**: User → Role *(coming soon)*
 
 ![Database Model](docs/db_purpose.png)
 
@@ -357,7 +396,7 @@ erDiagram
 - [x] Student enrollment
 - [x] Teacher & Teacher Profile
 - [x] Staff
-- [ ] Subject & Gradebook
+- [x] Subject & Gradebook
 - [ ] Spring Security + JWT authentication
 - [ ] Some Tests & Manage Errors
 - [ ] deployment
