@@ -4,6 +4,7 @@ public record TeacherDto(
         Integer teacherId,
         Boolean teacherActive,
         Integer profileId,
-        Integer personId
+        Integer personId,
+        Integer assignmentId
 ) {
 }

@@ -25,4 +25,5 @@ public class AcademicAssignmentEntity {
     @Column(name = "Asi_Year")
     private Integer assignmentYear;
 
+
 }
