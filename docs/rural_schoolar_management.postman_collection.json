@@ -1,0 +1,2189 @@
+{
+  "info": {
+    "_postman_id": "94496275-b525-4a65-adcc-2667ec455dd0",
+    "name": "🏫rural_schoolar_management",
+    "description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25257108"
+  },
+  "item": [
+    {
+      "name": "🏛️Institutional layer",
+      "item": [
+        {
+          "name": "🌡️Grades",
+          "item": [
+            {
+              "name": "FindAllGrades",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FindGradesById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteGradeById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PatchGradeById",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"gradeName\":\"Noveno b \",\r\n    \"gradeActive\":false\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade/3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade",
+                    "3"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "SaveGradeById",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"grdName\":\"Sexto A 6°\",\r\n    \"grdActive\":true,\r\n    \"campusId\":1\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FindGradesByName",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/grade/\"name\"",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "grade",
+                    "\"name\""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "url http://localhost:8090/rc8/api/grades"
+        },
+        {
+          "name": "🌲Campus",
+          "item": [
+            {
+              "name": "GetAllCampus",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetCampusById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus/2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteCampusById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetCampusByName",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus/\"villa\"",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus",
+                    "\"villa\""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PatchCampus",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"campusName\":\"unipamplona\",\r\n \"campusLocation\":\"Km 1 vía Pamplona Bucaramanga Barrio el buque\",\r\n \"campusActive\":false   \r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus/4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus",
+                    "4"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "SaveNewCampus",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"campusName\":\"Los mártires\",\r\n \"campusLocation\":\"AVenida Santander, Molinera de Herrán\",\r\n \"campusActive\":false,\r\n \"schoolId\":1\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/campus",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "campus"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "🏫school",
+          "item": [
+            {
+              "name": "Get All schools",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjYW1pbCIsImlhdCI6MTc3NTE4NDY5MSwiZXhwIjoxNzc1MjcxMDkxfQ.Tl5tiWSZQxxZHx0URh2u3Tr4Ou7aHo6f4gVXu0h9LvYqrl0CEPnvH7c0RfkGb2lD",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/school",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "school"
+                  ]
+                },
+                "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+              },
+              "response": []
+            },
+            {
+              "name": "Get School By Id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/school/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "school",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Save School",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Successful POST request\", function () {",
+                      "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"escAddress\":\"Barrio Trapiches, antigua via boconó - villa del rosario \",\n    \"escName\": \"Gimnasio los almendros\",\n    \"escDescription\":\"Colegio del orden privado xxx\",\n    \"escFoundationDate\":\"2023-05-01\",\n    \"escRanking\":16,\n    \"escState\":\"A\"\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/schools",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "schools"
+                  ]
+                },
+                "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+              },
+              "response": []
+            },
+            {
+              "name": "Save School 2",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Successful POST request\", function () {",
+                      "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "0d3dd5ca-171b-4c08-a2f8-14bc0ad4e4e7",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "user",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"escName\": \"Gimnasio los palitos\",\n    \"escDescription\":\"Colegio del orden público\",\n    \"escAddress\":\"Barrio Carora\",\n    \"escFoundationDate\":\"2024-05-01\",\n    \"escRanking\":12,\n    \"escState\":\"A\"\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/school",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "school"
+                  ]
+                },
+                "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+              },
+              "response": []
+            },
+            {
+              "name": "Delete School",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Successful DELETE request\", function () {",
+                      "    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/school/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "school",
+                    "1"
+                  ]
+                },
+                "description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+              },
+              "response": []
+            },
+            {
+              "name": "Update data",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Successful PUT request\", function () {",
+                      "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"escName\": \"San Juanito\",\n    \"escDescription\":\"Vía boconó\",\n    \"escAddress\":\"Motel\",\n    \"escRanking\":12,\n    \"escState\":false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/schools/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "schools",
+                    "1"
+                  ]
+                },
+                "description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+              },
+              "response": []
+            }
+          ]
+        }
+      ],
+      "description": "School\n\n[http://localhost:8090/rc8/api/school](http://localhost:8090/rc8/api/school)\n\nCampus\n\n[http://localhost:8090/rc8/api/campus](http://localhost:8090/rc8/api/campus)\n\nGrade\n\n[http://localhost:8090/rc8/api/grade](http://localhost:8090/rc8/api/grade)\n\n<img src=\"https://content.pstmn.io/f0f71c76-77b1-46ce-a14d-2763834e7d02/aW1hZ2UucG5n\" width=\"303\" height=\"484\">"
+    },
+    {
+      "name": "👣Identity Layer",
+      "item": [
+        {
+          "name": "🙎‍♂️Person",
+          "item": [
+            {
+              "name": "findAllPersons",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjYW1pbCIsImlhdCI6MTc3NTE4NDMwMywiZXhwIjoxNzc1MjcwNzAzfQ.1XdO_e0XwYmz_mBxUnICI4Hji875J3ltZMgVfcKKjeVQpQ6hNihf48FdT61C_gsJ",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FindPersonById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FindPersonByDni",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/dni/1111",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "dni",
+                    "1111"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FindPersonByName",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/name/aaaa",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "name",
+                    "aaaa"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PatchPersonById",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\":\"Pedro\",\r\n    \"lastName\":\"Coral Tavera\",\r\n    \"personDni\":\"123233444\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "savePerson",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\":\"Pedro\",\r\n    \"lastName\":\"Coral Tavera\",\r\n    \"personDni\":\"123233444\",\r\n    \"personBirthdate\":\"2026-09-12\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeletePersonById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeletePersonByDni",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/dni/9999",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "dni",
+                    "9999"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "description": "http://localhost:8090/rc8/api/person"
+        },
+        {
+          "name": "📞Contact",
+          "item": [
+            {
+              "name": "GetallContacts",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetContactById",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "GetContactByEmail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/mail/\"ccc@ccc.co\"",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "mail",
+                    "\"ccc@ccc.co\""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetAllContacts",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/mail/\"ccc@ccc.co\"",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "mail",
+                    "\"ccc@ccc.co\""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "saveContact",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n     \"contactPhone\":\"000000\",\r\n     \"contactEmail\":\"aac@ccc.co\",\r\n     \"contactAddress\":\"Avenida 4ta\",\r\n     \"personId\":5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PatchContactById",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n     \"contactPhone\":\"12345678\",\r\n     \"contactEmail\":\"aabb@ccc.co\",\r\n     \"contactAddress\":\"Avenida 5ta\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateContactById",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n     \"contactPhone\":\"12345678\",\r\n     \"contactAddress\":\"Avenida 5ta\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteContactById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteContactByEmail",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/person/contact/mail/\"aac@ccc.co\"",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "person",
+                    "contact",
+                    "mail",
+                    "\"aac@ccc.co\""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Specialization",
+          "item": [
+            {
+              "name": "👨‍🏫👩‍🏫teachers",
+              "item": [
+                {
+                  "name": "📒Profile",
+                  "item": [
+                    {
+                      "name": "FIndAllTeachersProfiles",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "FindProfileById",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile/1",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile",
+                            "1"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "FindProfileByProfileName",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile/name/quimico",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile",
+                            "name",
+                            "quimico"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "saveProfile",
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"profileName\":\"QUIMICO\",\r\n    \"profileDescription\":\"Profesional en Ingeniería química o licenciado en química\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "updateProfileById",
+                      "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"profileName\":\"QUIMICO\",\r\n    \"profileDescription\":\"Profesional en Ingeniería química o licenciado en química\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile/1",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile",
+                            "1"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "DeleteProfileById",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:8090/rc8/api/teacher/profile/1",
+                          "protocol": "http",
+                          "host": [
+                            "localhost"
+                          ],
+                          "port": "8090",
+                          "path": [
+                            "rc8",
+                            "api",
+                            "teacher",
+                            "profile",
+                            "1"
+                          ]
+                        }
+                      },
+                      "response": []
+                    }
+                  ],
+                  "description": "Identity Specialization layer, teachers Profile\n\n###Endpoint\n\nlink: [<i>http://localhost:8090/rc8/api/teacher/profile</i>](http://localhost:8090/rc8/api/teacher/profileEndFragment)\n\n[](http://localhost:8090/rc8/api/teacher/profileEndFragment)\n\n## Methods\n\nFindAllProfiles [http://localhost:8090/rc8/api/teacher/profile](http://localhost:8090/rc8/api/teacher/profile)  \nGetById: [http://localhost:8090/rc8/api/teacher/profile/1](http://localhost:8090/rc8/api/teacher/profile)\n\nGetByName: [http://localhost:8090/rc8/api/teacher/profile/name/quimico](http://localhost:8090/rc8/api/teacher/profile)\n\nSave: [http://localhost:8090/rc8/api/teacher/profile](http://localhost:8090/rc8/api/teacher/profile)\n\nPatch: [http://localhost:8090/rc8/api/teacher/profile/1](http://localhost:8090/rc8/api/teacher/profile)  \nDeleteById: [http://localhost:8090/rc8/api/teacher/profile/1](http://localhost:8090/rc8/api/teacher/profile)"
+                },
+                {
+                  "name": "GetALlteachers",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/teacher",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "teacher"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "GetTeacherById",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/teacher/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "teacher",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "saveTeacher",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n     \"teacherActive\":true,\r\n      \"personId\":1,\r\n    \"profileId\":2\r\n   \r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/teacher",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "teacher"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "PatchTeacherById",
+                  "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n     \"teacherActive\":true\r\n     \r\n    \r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/teacher/8",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "teacher",
+                        "8"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "DeleteTeacherById",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/teacher/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "teacher",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "🧑‍🎓👩‍🎓students",
+              "item": [
+                {
+                  "name": "FindAllStudents",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/person/students",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "person",
+                        "students"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "findStudentById",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/person/students/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "person",
+                        "students",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "SaveStudent",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"studentEnrollment\":\"2026-01-02\",\r\n    \"studentActive\":true,\r\n    \"personId\":1,\r\n    \"gradeId\":2\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/person/students",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "person",
+                        "students"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "patchStudentByid",
+                  "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"studentEnrollment\":\"2026-01-02\",\r\n    \"studentActive\":true\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/person/students/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "person",
+                        "students",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "DeleteStudentById",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/person/students/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "person",
+                        "students",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "👨‍💼Staff",
+              "item": [
+                {
+                  "name": "GetAllStaffMemebers",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/staff",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "staff"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "GetStaffById",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/staff/4",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "staff",
+                        "4"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "PatchStaffById",
+                  "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"staffPosition\":\"Campus Director\",\r\n    \"escId\":2,\r\n    \"campusId\":2\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/staff/2",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "staff",
+                        "2"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "saveStaffMember",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"staffPosition\":\"General Director\",\r\n    \"personId\":2,\r\n    \"escId\":1,\r\n    \"campusId\":1\r\n\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/staff",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "staff"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "DeleteStaffById",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8090/rc8/api/staff/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8090",
+                      "path": [
+                        "rc8",
+                        "api",
+                        "staff",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "description": "### Link:"
+            }
+          ],
+          "description": "Student  \nStaff  \nTeacher"
+        }
+      ],
+      "description": "<img src=\"https://content.pstmn.io/6c568608-9625-4ea1-90da-24c9262774aa/aW1hZ2UucG5n\" alt=\"\" height=\"411\" width=\"673\">"
+    },
+    {
+      "name": "✍️Academic Layer",
+      "item": [
+        {
+          "name": "📋AcademicAssignment",
+          "item": [
+            {
+              "name": "GetAllAssignments",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "GetAssignmentById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/assignment/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "assignment",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "createAssignment",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"assignmentYear\":2021\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/assignment",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "assignment"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateAssignmente",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"assignmentYear\":2021\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/assignment/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "assignment",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteAssignmentById Copy",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/assignment/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "assignment",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "📔Subject",
+          "item": [
+            {
+              "name": "GetallSubjects",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "GetSubjectById",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetSubjectByName",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject/named/Calculo 3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject",
+                    "named",
+                    "Calculo 3"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "saveSubject",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Producción II\",\r\n    \"subjectDescription\":\"Coladero\",\r\n    \"assignmentId\":1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "patchSubject",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 3\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteSubjectById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteSubjectByName",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/subject/named/Calculo 3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "subject",
+                    "named",
+                    "Calculo 3"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "📈Gradebook",
+          "item": [
+            {
+              "name": "GetallGradebooks",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/gradebook",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "gradebook"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findGradebookById",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/gradebook/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "gradebook",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PatchGradebookById",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"gradebookValue\":1.2,\r\n    \"studentId\":1,\r\n    \"assignmentId\":1\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/gradebook/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "gradebook",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "SaveGradebook",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"gradebookValue\":4.2,\r\n    \"studentId\":2,\r\n    \"assignmentId\":1\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/gradebook",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "gradebook"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteGradebookById",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"subjectName\":\"Calculo 1\",\r\n    \"subjectDescription\":\"El primer dolor de cabeza\",\r\n    \"assignmentId\":1\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8090/rc8/api/academic/gradebook/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "rc8",
+                    "api",
+                    "academic",
+                    "gradebook",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔏Security",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"pecora\",\r\n    \"userPassword\": \"123456\",\r\n    \"personId\": 2,\r\n    \"roleId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/rc8/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "rc8",
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"pecora\",\r\n    \"userPassword\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/rc8/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "rc8",
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "id",
+      "value": "1"
+    },
+    {
+      "key": "base_url",
+      "value": "https://template.postman-echo.com"
+    }
+  ]
+}

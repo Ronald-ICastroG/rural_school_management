@@ -11,6 +11,8 @@
 |---|---------|
 | Java | 21      |
 | Spring Boot | 3.5.11  |
+| Spring Security | 6.5     |
+| JWT (JWT) | 0.12.3  |
 | Gradle | 8.14.4  |
 | MapStruct | 1.6.3   |
 | MySQL | latest  |
@@ -18,7 +20,6 @@
 | Springdoc OpenAPI (Swagger) | 2.7.0   |
 
 ---
-
 ## 🏗️ Architecture
 
 The project follows a **layered architecture** with clear domain separation:
@@ -36,29 +37,28 @@ The project follows a **layered architecture** with clear domain separation:
 - `dto/academic/academicAssignment` — AcademicAssignmentDto, UpdateAcademicAssignmentDto
 - `dto/academic/subject` — SubjectDto, UpdateSubjectDto
 - `dto/academic/gradebook` — GradebookDto, UpdateGradebookDto
-- `repository/Identity` — ContactRepository, PersonRepository, StudentRepository, TeacherRepository, TeacherProfileRepository, StaffRepository
-- `repository/Institutional` — CampusRepository, GradeRepository, SchoolRepository
-- `repository/Academic` — AcademicAssignmentRepository, SubjectRepository, GradebookRepository
-- `service/Identity` — ContactService, PersonService, StudentService, TeacherService, TeacherProfileService, StaffService
-- `service/Institutional` — CampusService, GradeService, SchoolService
-- `service/Academic` — AcademicAssignmentService, SubjectService, GradebookService
+- `dto/Security` — RegisterRequest, LoginRequest, AuthResponse
+- `service/Security` — AuthService, JwtService, JwtAuthenticationFilter, UserDetailsServiceImpl
 
 **persistence/**
 - `entity/Identity` — ContactEntity, PersonEntity, StudentEntity, TeacherEntity, TeacherProfileEntity, StaffEntity
 - `entity/Institutional` — CampusEntity, GradeEntity, SchoolEntity
 - `entity/Academic` — AcademicAssignmentEntity, SubjectEntity, GradebookEntity
+- `entity/Security` — UserEntity (implements UserDetails), RoleEntity
 - `mapper/Identity` — ContactMapper, PersonMapper, StudentMapper, TeacherMapper, TeacherProfileMapper, StaffMapper
 - `mapper/Institutional` — CampusMapper, GradeMapper, SchoolMapper
 - `mapper/Academic` — AcademicAssignmentMapper, SubjectMapper, GradebookMapper
-- `repository/Identity` — ContactEntityRepository, PersonEntityRepository, StudentEntityRepository, TeacherEntityRepository, TeacherProfileEntityRepository, StaffEntityRepository
-- `repository/Institutional` — CampusEntityRepository, GradeEntityRepository, SchoolEntityRepository
-- `repository/Academic` — AcademicAssignmentEntityRepository, SubjectEntityRepository, GradebookEntityRepository
+- `repository/Security` — JpaUserRepository, JpaRoleRepository
+
+**config/**
+- `SecurityConfig` — Spring Security filter chain, BCrypt password encoder, JWT authentication
 
 **web/controller/**
 - `Identity` — ContactController, PersonController
 - `Identity/specialization` — StudentController, TeacherController, TeacherProfileController, StaffController
 - `Institutional` — CampusController, GradeController, SchoolController
 - `Academic` — AcademicAssignmentController, SubjectController, GradebookController
+- `Security` — AuthController (register, login)
 
 ---
 
@@ -68,7 +68,6 @@ The project follows a **layered architecture** with clear domain separation:
 - Docker & Docker Compose
 - Git
 
----
 
 ## ▶️ Run the project
 
@@ -89,6 +88,44 @@ The API will be available at: `http://localhost:8090/rc8/api`
 
 ---
 
+## 🔐 Authentication
+
+This API uses JWT authentication. All endpoints except `/auth/**` and Swagger require a valid token.
+
+**1. Register a user**
+
+```
+POST /auth/register
+```
+```json
+{
+    "userName": "admin",
+    "password": "123456",
+    "personId": 1,
+    "roleId": 1
+}
+```
+
+**2. Login and get token**
+
+```
+POST /auth/login
+```
+```json
+{
+    "userName": "admin",
+    "password": "123456"
+}
+```
+
+**3. Use the token in requests**
+
+```
+Authorization: Bearer <your_token>
+```
+
+---
+
 ## 📖 API Documentation
 
 Once the project is running, access the interactive Swagger UI:
@@ -97,9 +134,21 @@ Once the project is running, access the interactive Swagger UI:
 http://localhost:8090/rc8/api/swagger-ui/index.html
 ```
 
+📬 **Postman Collection**: Import `docs/rural_school_management.postman_collection.json` to test all endpoints locally.
+
 ---
 
 ## 📡 Available Endpoints
+
+## 📡 Available Endpoints
+
+### 🔑 Authentication
+
+| Method | Endpoint | Description | Auth required |
+|---|---|---|---|
+| POST | `/auth/register` | Register new user | No |
+| POST | `/auth/login` | Login and get JWT token | No |
+
 
 ### 🏫 School
 
@@ -397,7 +446,7 @@ erDiagram
 - [x] Teacher & Teacher Profile
 - [x] Staff
 - [x] Subject & Gradebook
-- [ ] Spring Security + JWT authentication
+- [x] Spring Security + JWT authentication
 - [ ] Some Tests & Manage Errors
 - [ ] deployment
 
