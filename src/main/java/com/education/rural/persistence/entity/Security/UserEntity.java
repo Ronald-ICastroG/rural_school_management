@@ -37,7 +37,7 @@ public class UserEntity implements UserDetails {
     @JoinColumn(name = "Usr_PerId")
     private PersonEntity personEntity;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "User_has_Role",
             joinColumns = @JoinColumn(name = "User_UsrId"),
