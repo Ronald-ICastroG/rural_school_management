@@ -446,7 +446,7 @@ erDiagram
 - [x] Teacher & Teacher Profile
 - [x] Staff
 - [x] Subject & Gradebook
-- [ ] Spring Security + JWT authentication
+- [x] Spring Security + JWT authentication
 - [ ] Some Tests & Manage Errors
 - [ ] deployment
 
