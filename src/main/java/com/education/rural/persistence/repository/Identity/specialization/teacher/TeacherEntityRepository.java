@@ -11,7 +11,10 @@ import com.education.rural.persistence.mapper.Identity.specialization.TeacherMap
 import com.education.rural.persistence.repository.Academic.AcademicAssignment.JpaAcademicAssignmentRepository;
 import com.education.rural.persistence.repository.Identity.person.JpaPersonRepository;
 import com.education.rural.persistence.repository.Identity.specialization.teacher.profile.JpaTeacherProfileRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
 
@@ -32,9 +35,17 @@ public class TeacherEntityRepository implements TeacherRepository {
         this.jpaAcademicAssignmentRepository = jpaAcademicAssignmentRepository;
     }
 
+
+
+
     @Override
     public List<TeacherDto> findAllTeachers() {
         return this.teacherMapper.teachersToDto(this.jpaTeacherRepository.findAll());
+    }
+
+    public Page<TeacherDto> findActiveTeachers(Pageable pageable){
+     return this.jpaTeacherRepository.findByTeacherActiveTrue(pageable)
+             .map(teacherMapper::toDto);
     }
 
     @Override

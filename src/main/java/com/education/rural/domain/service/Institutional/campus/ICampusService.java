@@ -14,4 +14,6 @@ public interface ICampusService {
     CampusDto saveCampus(CampusDto campusDto);
     CampusDto patchCampus(int id, UpdateCampusDto updateCampusDto);
     void deleteCampus(Integer id);
+
+
 }

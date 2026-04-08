@@ -3,6 +3,8 @@ package com.education.rural.domain.service.Identity.specialization.teacher;
 import com.education.rural.domain.dto.Identity.specialization.teacher.TeacherDto;
 import com.education.rural.domain.dto.Identity.specialization.teacher.UpdateTeacherDto;
 import com.education.rural.domain.repository.Identity.specialization.TeacherRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,11 @@ public class TeacherService implements ITeacherService{
     public TeacherService(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
 
+    }
+
+    @Override
+    public Page<TeacherDto> findActiveTeachers(Pageable pageable) {
+        return this.teacherRepository.findActiveTeachers(pageable);
     }
 
     @Override

@@ -7,8 +7,13 @@ import com.education.rural.domain.service.Identity.specialization.teacher.ITeach
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,6 +47,23 @@ public class TeacherController {
     )
     public ResponseEntity<TeacherDto> findTeacherById(@PathVariable int id) {
         return ResponseEntity.ok(this.teacherService.getTeacherById(id));
+    }
+
+    @GetMapping("/active")
+    @Operation(summary = "Get Page active Teacher",
+    responses =
+    @ApiResponse(responseCode = "200",description = "ok,paged results"))
+    public ResponseEntity<Page<TeacherDto>> findActiveTeachers(
+            @RequestParam int page,
+            @RequestParam int elements,
+            @RequestParam String sortBy,
+            @RequestParam String sortDirection
+    ){
+        Sort sort=Sort.by(Sort.Direction.fromString(sortDirection),sortBy);
+        Pageable pageable= PageRequest.of(page,elements,sort);
+        return ResponseEntity.ok(this.teacherService.findActiveTeachers(pageable));
+
+
     }
 
     @PostMapping
